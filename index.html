@@ -121,7 +121,7 @@
 //        var html = '<iframe id ="cam" width="60%" height="600" src="http://www.youtube.com/embed/' + videos[index] + '" frameborder="0" allowfullscreen></iframe>';
         let video = document.createElement("iframe");
         video.id = "cam";
-        video.src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1";
+        video.src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1&mute=1";
         document.getElementById("video-col").appendChild(video);
         
 //        document.write(html);
@@ -135,7 +135,7 @@
 
             let url = document.getElementById("cam").src;
             previous.push(url)
-            document.getElementById("cam").src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1" ;
+            document.getElementById("cam").src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1&mute=1" ;
         }
         
          const prevvid = function(){
