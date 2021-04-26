@@ -15,7 +15,15 @@ function setup() {
     canvas.style('z-index', '-1');
 }
 
+function keyTyped() {
+  
+  if (key == 'c'){
+    clear();
+  }
+  
+}
 
+  
 
 function mouseDragged() {
     fill(random(colors));
