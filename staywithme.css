@@ -6,38 +6,54 @@ body {
 h1 {
     font-family: 'Gaegu', cursive;
     font-size: 52px;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Gaegu', cursive;
     color: grey;
     font-size: 30px;
-    margin-top: -5vh;
-}
-
-p {
-    margin-top: 10vh;
-    margin-right: 50vw;
-    font-family: 'Gothic A1', sans-serif;
-    /*   border-style: solid;
-  padding-top:2%;
-  padding-left: 2%;
-  padding-bottom: 2%;
-  border-width: 1px; */
+    margin: 0;
 }
 
 .span4 {
     text-align: right;
+    width: 75%;
+}
+
+#cam{
+    width: 100%;
+    height: 100%;
+}
+
+.bigcontainer{
+    display: flex;
+    flex-direction: row;
+    height: 75vh;
+}
+
+.maintext{
+    width: 25%;
+}
+
+.buttons{
+    margin: 50px 0;
 }
 
 
+.instructions {
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 14px;
+    margin-right: 70px;
+
+}
+
 #next {
-    font-family: 'Gaegu',
-        cursive;
+    font-family: 'Gaegu', cursive;
     background-color: #016295;
     border: none;
     color: white;
-    padding: 12px 80px;
+    padding: 12px 105px;
     text-align: center;
     text-decoration: none;
     display: block;
@@ -52,7 +68,7 @@ p {
     background-color: #016295;
     border: none;
     color: white;
-    padding: 12px 78px;
+    padding: 12px 103px;
     text-align: center;
     text-decoration: none;
     display: block;
@@ -61,6 +77,17 @@ p {
     cursor: pointer;
 }
 
+#firstline {
+    font-family: 'Gothic A1', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+#icon {
+    margin-left: 101.5%;
+}
+
+/*OVERLAY STYLING*/
 .overlay {
     height: 100%;
     width: 100%;
@@ -76,9 +103,10 @@ p {
 .overlay-content {
     font-family: 'Gothic A1', sans-serif;
     color: white;
+    font-size: 14px;
     position: relative;
-    top: 25%;
-    left: 20vw;
+    top: 20%;
+    left: 25vw;
     width: 100%;
     text-align: left;
     margin-top: 30px;
@@ -115,3 +143,5 @@ p {
         top: 15px;
         right: 35px;
     }
+
+    /*END OF OVERLAY*/

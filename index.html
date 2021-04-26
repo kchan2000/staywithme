@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stay With Me</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="staywithme.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Gothic+A1&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="assets/yellowheart.png" type="image/png" sizes="16x16">
+
+</head>
+
+<body>
+    <span id="icon" style="font-size:30px;cursor:pointer" onclick="openNav()"> &#9432;</span>
+
+<div class = "bigcontainer">
+    <div class="maintext">
+        <h1>stay with me</h1>
+        <h2>
+            zoo live cam roulette
+        </h2>
+
+        <div class="buttons">
+            <button id='next'>NEXT > </button>
+            <button id="back"> PREVIOUS </button>
+
+        </div>
+    
+
+        <div class="instructions">
+            use left and right arrows to go back and forth.
+            <br>
+            <br>
+            interact with webpage by hovering, moving, and clicking with your mouse.
+            <br>
+            <br>
+            made with 💛 by katie chan
+        </div>
+
+    </div>
+    <div id="video-col" class="span4"></div>
+    </div>
+
+
+
+
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <p id="firstline">
+                stay with me is a zoo live cam roulette project that was imagined out of Canada's third round (April 2021) of stay-at-home orders due to COVID-19.
+            </p>
+            <p>
+                <br>
+                <br>
+                in an intensely virtual and remote time, I felt incredibly apathetic and jaded, but when stumbling across wildlife and zoo live cams, I found a deep sense of comfort. <br>there was a sense of being a part of something bigger than just sitting at home and the fact that they were live felt like these animals were keeping me company.
+                <br>
+                <br>
+                i tried to include live cams from all around the world to capture the global feeling.
+                <br>
+                <br>
+                live cams from:
+                <br>🌊 Monterey Bay Aquarium - Monterey, California
+                <br>🌾 Kansas City Zoo - Kansas City, Missouri
+                <br>🐘 Tembe Elephant Park - Emangusi, South Afric
+                <br>🥭 Panama Fruit Feeder Cam/ Cornell Lab - El Valle de Antón, Panama
+                <br> 🦜 Live Hummingbrid Cam - Studio City, California
+                <br>⭐Taronga Zoo - Sydney, Australia
+
+
+
+                <br>
+                <br>
+
+                special thanks to:
+                <br>Qianqian Ye
+                <br>Justin Hu
+                <br>& my IML 400 classmates
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        var videos = [
+            'TO7J7649FK8',
+            'JJqXeRFsLjE',
+            'O34gKi2IHk4',
+            's2tCSApD-7M',
+            'FIGJDFcXJFA',
+            '48MFrf5ADp8',
+            'WtoxxHADnGk',
+            '2BDnAMR3GLg',
+            'koomTdslcMQ',
+            'pXe8MpU7uzk',
+            'BSUnBPvX9K4',
+            'N609loYkFJo',
+        ];
+
+        var index = Math.floor(Math.random() * videos.length);
+
+//        var html = '<iframe id ="cam" width="60%" height="600" src="http://www.youtube.com/embed/' + videos[index] + '" frameborder="0" allowfullscreen></iframe>';
+        let video = document.createElement("iframe");
+        video.id = "cam";
+        video.src = "http://www.youtube.com/embed/" + videos[index] + "?autoplay=1";
+        document.getElementById("video-col").appendChild(video);
+        
+//        document.write(html);
+
+        var previous = [];
+        previous.push(videos[index])
+
+
+        document.getElementById("next").onclick = function(e) {
+            var index = Math.floor(Math.random() * videos.length);
+
+            e.preventDefault();
+            let url = document.getElementById("cam").src;
+            previous.push(url)
+            document.getElementById("cam").src = "http://www.youtube.com/embed/" + videos[index] + "?autoplay=1" ;
+        }
+
+        document.getElementById("back").onclick = function(e) {
+            let prev = previous.pop();
+            if (prev) {
+                document.getElementById("cam").src = prev;
+            }
+        }
+
+        function openNav() {
+            document.getElementById("myNav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.display = "none";
+        }
+
+    </script>
+
+
+
+    <!--
+    <div class="zoocams">
+        <class id="otters">
+            <iframe width="700" height="500" src="https://www.youtube.com/embed/TO7J7649FK8?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </class>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/O34gKi2IHk4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/koomTdslcMQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WtoxxHADnGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="700" height="500" src="https://zssd-baboon.secureplayer.camzonecdn.com/v1.3/CamzoneStreamPlayer?iframe=yes"></iframe>
+-->
+
+
+    <!--
+        <iframe width="700" height="500" src="https://www.youtube.com/embed/JJqXeRFsLjE?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+-->
+
+    <!--    </div>-->
+
+
+
+    <footer></footer>
+
+</body>
+
+</html>
