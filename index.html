@@ -72,7 +72,7 @@
             <p>
                 <br>
                 <br>
-                in an intensely virtual and remote time, I felt incredibly apathetic and jaded, but when stumbling across wildlife and zoo live cams, I found a deep sense of comfort. <br>there was a sense of being a part of something bigger than just sitting at home and the fact that they were live felt like these animals were keeping me company.
+                in an intensely virtual and remote time, I felt incredibly apathetic and jaded, but when stumbling across wildlife and zoo live cams, I found a deep sense of comfort. <br> i included live cams from all around the world so while you may stumble upon sleeping polar bears in the USA, the elephants in Australia are waking.
                 <br>
                 <br>
                 i tried to include live cams from all around the world to capture the global feeling.
@@ -92,8 +92,8 @@
                 <br>
 
                 special thanks to:
-                <br>Qianqian Ye
                 <br>Justin Hu
+                <br>Qianqian Ye
                 <br>& my IML 400 classmates
             </p>
         </div>
@@ -121,30 +121,45 @@
 //        var html = '<iframe id ="cam" width="60%" height="600" src="http://www.youtube.com/embed/' + videos[index] + '" frameborder="0" allowfullscreen></iframe>';
         let video = document.createElement("iframe");
         video.id = "cam";
-        video.src = "http://www.youtube.com/embed/" + videos[index] + "?autoplay=1";
+        video.src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1";
         document.getElementById("video-col").appendChild(video);
         
 //        document.write(html);
 
         var previous = [];
         previous.push(videos[index])
+        
+         const nextvid = function(e){
+            console.log("SPECIAL THANKS TO JUSTIN HU!");
+             var index = Math.floor(Math.random() * videos.length);
 
-
-        document.getElementById("next").onclick = function(e) {
-            var index = Math.floor(Math.random() * videos.length);
-
-            e.preventDefault();
             let url = document.getElementById("cam").src;
             previous.push(url)
-            document.getElementById("cam").src = "http://www.youtube.com/embed/" + videos[index] + "?autoplay=1" ;
+            document.getElementById("cam").src = "https://www.youtube.com/embed/" + videos[index] + "?autoplay=1" ;
         }
-
-        document.getElementById("back").onclick = function(e) {
-            let prev = previous.pop();
+        
+         const prevvid = function(){
+              let prev = previous.pop();
             if (prev) {
                 document.getElementById("cam").src = prev;
             }
         }
+
+
+        document.getElementById("next").onclick = nextvid;
+        
+        document.onkeydown = function(e){
+            console.log(e);
+            if(e.keyCode===39){
+                nextvid();
+            }
+            if(e.keyCode===37){
+                prevvid();
+            }
+        }
+
+        document.getElementById("back").onclick = prevvid;
+
 
         function openNav() {
             document.getElementById("myNav").style.display = "block";
@@ -155,33 +170,6 @@
         }
 
     </script>
-
-
-
-    <!--
-    <div class="zoocams">
-        <class id="otters">
-            <iframe width="700" height="500" src="https://www.youtube.com/embed/TO7J7649FK8?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        </class>
-        
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/O34gKi2IHk4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
--->
-
-    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/koomTdslcMQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/WtoxxHADnGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-        <iframe width="700" height="500" src="https://zssd-baboon.secureplayer.camzonecdn.com/v1.3/CamzoneStreamPlayer?iframe=yes"></iframe>
--->
-
-
-    <!--
-        <iframe width="700" height="500" src="https://www.youtube.com/embed/JJqXeRFsLjE?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
--->
-
-    <!--    </div>-->
 
 
 
